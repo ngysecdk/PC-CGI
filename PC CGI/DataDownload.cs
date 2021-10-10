@@ -8,10 +8,11 @@ namespace PC_CGI
 {
     class DataDownload
     {
+        Cryptor cryptor;
         DataDownload()
         {
             //Curve25519()
-            
+            cryptor = new Cryptor();
         }
     }
 

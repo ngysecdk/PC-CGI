@@ -7,17 +7,17 @@ namespace PC_CGI
 {
     class Cryptor
     {
-        Cryptor()
+        public Cryptor()
         {
             //TODO Нужно Обменяься ключами с серером и поднять сеанс
         }
 
-        byte[] Encrypt(byte[] data)
+        public byte[] Encrypt(byte[] data)
         {
             return data;
         }
 
-        byte[] Decrypt(byte[] data)
+        public byte[] Decrypt(byte[] data)
         {
             return data;
         }
