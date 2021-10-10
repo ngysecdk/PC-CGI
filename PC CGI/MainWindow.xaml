@@ -1,0 +1,15 @@
+﻿<Window x:Class="PC_CGI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC_CGI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Background.png" Stretch="Uniform"/>
+    </Window.Background>
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Right" Height="50" Margin="0,0,30,30" VerticalAlignment="Bottom" Width="135"/>
+    </Grid>
+</Window>
