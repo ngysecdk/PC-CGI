@@ -23,5 +23,10 @@ namespace PC_CGI
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown(0);
+        }
     }
 }
