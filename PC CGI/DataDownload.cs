@@ -11,23 +11,22 @@ namespace PC_CGI
     {
         Cryptor cryptor;
         Socket socket;
-        static int port = 7755;              /// порт сервера
-        static string address = "192.168.0.1"; /// адрес сервера
+        static int port = 7755;                 /// порт сервера
+        static string address = "192.168.0.1";  /// адрес сервера
         public DataDownload()
         {
-            //Curve25519()
             cryptor = new Cryptor();
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            // подключаемся к удаленному хосту
             retry:
             try { socket.Connect(IPAddress.Parse(address), port); }
             catch (System.Exception e) { 
-                if (System.Windows.MessageBox.Show(e.Message + "\nПовторить попытку? (Не думаю. что это поможет)", 
+                if (MessageBox.Show(e.Message + 
+                    "\nПовторить попытку? (Не думаю. что это поможет)", 
                     "Ошибка при подключении к серверу",
-                    System.Windows.MessageBoxButton.YesNo,
-                    System.Windows.MessageBoxImage.Question,
-                    System.Windows.MessageBoxResult.Yes,
-                    System.Windows.MessageBoxOptions.DefaultDesktopOnly) == System.Windows.MessageBoxResult.No)
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question,
+                    MessageBoxResult.Yes,
+                    MessageBoxOptions.DefaultDesktopOnly) == MessageBoxResult.No)
                     Application.Current.Shutdown(-1);
                 else goto retry;
             }
