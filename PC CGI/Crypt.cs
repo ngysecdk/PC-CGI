@@ -7,8 +7,10 @@ namespace PC_CGI
 {
     class Cryptor
     {
-        public Cryptor()
+        Socket sock;
+        public Cryptor(Socket Sock)
         {
+            sock = Sock;
             //TODO Нужно Обменяься ключами с серером и поднять сеанс
         }
 
