@@ -51,6 +51,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -68,6 +71,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChooseComponent.xaml.cs">
+      <DependentUpon>ChooseComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs" />
+    <Compile Include="TextButton.xaml.cs">
+      <DependentUpon>TextButton.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ChooseComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,8 +96,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewGuitar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewGuitar.xaml.cs">
+      <DependentUpon>NewGuitar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,6 +126,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -121,6 +147,35 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AnkerMoved.png" />
+    <Resource Include="Images\AnkerNormal.png" />
+    <Resource Include="Images\AnkerPressed.png" />
+    <Resource Include="Images\BridgeMoved.png" />
+    <Resource Include="Images\BridgeNormal.png" />
+    <Resource Include="Images\BridgePressed.png" />
+    <Resource Include="Images\DekaMoved.png" />
+    <Resource Include="Images\DekaNormal.png" />
+    <Resource Include="Images\DekaPressed.png" />
+    <Resource Include="Images\ElectricMoved.png" />
+    <Resource Include="Images\ElectricNormal.png" />
+    <Resource Include="Images\ElectricPressed.png" />
+    <Resource Include="Images\GrifMoved.png" />
+    <Resource Include="Images\GrifNormal.png" />
+    <Resource Include="Images\GrifPressed.png" />
+    <Resource Include="Images\KolkMoved.png" />
+    <Resource Include="Images\KolkNormal.png" />
+    <Resource Include="Images\KolkPressed.png" />
+    <Resource Include="Images\SoundGetterMoved.png" />
+    <Resource Include="Images\SoundGetterNormal.png" />
+    <Resource Include="Images\SoundGetterPressed.png" />
+    <Resource Include="Images\StringsMoved.png" />
+    <Resource Include="Images\StringsNormal.png" />
+    <Resource Include="Images\StringsPressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TableBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

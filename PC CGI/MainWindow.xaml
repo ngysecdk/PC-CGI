@@ -10,12 +10,12 @@
         <ImageBrush ImageSource="Images/Background.png" Stretch="Uniform"/>
     </Window.Background>
     <Grid>
-        <Button Content="Выйти" HorizontalAlignment="Left" Height="65" Margin="20,20,0,0" VerticalAlignment="Top" Width="185" BorderBrush="#FF3A3A3A" BorderThickness="4" FontSize="30" FontWeight="Bold" FontFamily="Wide Latin" Click="Button_Click" Foreground="#FF0C0A0A">
+        <Button x:Name="Exitbtn" Content="Выйти" HorizontalAlignment="Left" Height="65" Margin="20,20,0,0" VerticalAlignment="Top" Width="185" BorderBrush="#FF3A3A3A" BorderThickness="4" FontSize="30" FontWeight="Bold" FontFamily="Wide Latin" Click="Close_Click" Foreground="#FF0C0A0A">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Background small.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="NewGuitar" Content="Хочу новую гитару" HorizontalAlignment="Left" Height="65" Margin="939,480,0,0" VerticalAlignment="Top" Width="312" BorderBrush="#FF3A3A3A" BorderThickness="4" FontSize="30" FontWeight="Bold" FontFamily="Wide Latin" Foreground="#FF0C0A0A" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="NewGuitar" Content="Хочу новую гитару" HorizontalAlignment="Left" Height="65" Margin="939,480,0,0" VerticalAlignment="Top" Width="312" BorderBrush="#FF3A3A3A" BorderThickness="4" FontSize="30" FontWeight="Bold" FontFamily="Wide Latin" Foreground="#FF0C0A0A" RenderTransformOrigin="0.5,0.5" Click="NewGuitar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Background small.png"/>
             </Button.Background>

@@ -1,13 +1,10 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using System.Threading;
 using System.Windows;
 using System.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
-//https://fooobar.com/questions/63815/how-to-convert-a-structure-to-a-byte-array-in-c
-
 
 namespace PC_CGI
 {
@@ -23,22 +20,16 @@ namespace PC_CGI
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             retry:
             try { socket.Connect(IPAddress.Parse(address), port); }
-            catch (System.Exception e) { 
-                if (MessageBox.Show(e.Message + 
-                    "\nПовторить попытку? (Не думаю. что это поможет)", 
-                    "Ошибка при подключении к серверу",
-                    MessageBoxButton.YesNo,
-                    MessageBoxImage.Question,
-                    MessageBoxResult.Yes,
-                    MessageBoxOptions.DefaultDesktopOnly) == MessageBoxResult.No)
-                    Environment.Exit(-1);
+            catch (Exception e) { 
+                if (MessageBox.Show(e.Message +  "\nПовторить попытку? (Не думаю. что это поможет)", 
+                    "Ошибка при подключении к серверу", MessageBoxButton.YesNo, MessageBoxImage.Question,
+                    MessageBoxResult.Yes) == MessageBoxResult.No) Environment.Exit(-1);
                 else goto retry;
             }
             cryptor = new Cryptor(socket);
             Send("Start");
             for (int i = 0; i < 10; i++) AddTable();
         }
-
         void AddTable()
         {
             DataTable dataTable = new DataTable();
@@ -65,20 +56,15 @@ namespace PC_CGI
         }
         string Receive()
         {
-            byte[] buff;
             socket.Receive(size);
-            buff = new byte[BitConverter.ToUInt32(size, 0)];
+            byte[] buff = new byte[BitConverter.ToUInt32(size, 0)];
             socket.Receive(buff);
             return Encoding.UTF8.GetString(buff);
         }
-
-
         ~DataDownload()
         {
             if (socket.Connected) socket.Shutdown(SocketShutdown.Both);
             socket.Close();
         }
     }
-
-
 }
