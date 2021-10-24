@@ -3,6 +3,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Windows;
 using System.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 //https://fooobar.com/questions/63815/how-to-convert-a-structure-to-a-byte-array-in-c
@@ -12,11 +13,11 @@ namespace PC_CGI
 {
     class DataDownload
     {
-        List<DataTable> tables;
+        List<DataTable> tables = new List<DataTable>();
         Cryptor cryptor;
         Socket socket;
-        static int port = 7755;                 /// порт сервера
-        static string address = "192.168.0.1";  /// адрес сервера
+        static int port = 5555;                 /// порт сервера
+        static string address = "192.168.0.2";  /// адрес сервера
         public DataDownload()
         { 
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -30,32 +31,47 @@ namespace PC_CGI
                     MessageBoxImage.Question,
                     MessageBoxResult.Yes,
                     MessageBoxOptions.DefaultDesktopOnly) == MessageBoxResult.No)
-                    Application.Current.Shutdown(-1);
+                    Environment.Exit(-1);
                 else goto retry;
             }
             cryptor = new Cryptor(socket);
-            socket.Send(Encoding.ASCII.GetBytes("Start"));
+            Send("Start");
             for (int i = 0; i < 10; i++) AddTable();
-
         }
 
         void AddTable()
         {
             DataTable dataTable = new DataTable();
-            byte[] buffer = new byte[];
-            socket.Receive(buffer);
-            dataTable.TableName = Encoding.ASCII.GetString(buffer).Replace("Table=", "");
+            var Tableheader = Receive().Split('|');
+            dataTable.TableName = Tableheader[0];
+            for (int i = 1; i < Tableheader.Length; i++) dataTable.Columns.Add(Tableheader[i], typeof(string));
             while (true)
             {
-                byte[] buff = new byte[];
-                socket.Receive(buff);
-                string getted = Encoding.ASCII.GetString(buffer);
-                if (getted == "ENDTABLE") break;
+                string getted = Receive();
+                if (getted == "ENDTABLE\0") break;
                 DataRow row = dataTable.NewRow();
                 row.ItemArray = getted.Split('|');
+                dataTable.Rows.Add(row);
+                GC.Collect();
             }
             tables.Add(dataTable);
         }
+        byte[] size = new byte[4];
+        int Send(string text)
+        {
+            byte[] buff = Encoding.UTF8.GetBytes(text);
+            socket.Send(BitConverter.GetBytes((uint)buff.Length));
+            return socket.Send(buff);
+        }
+        string Receive()
+        {
+            byte[] buff;
+            socket.Receive(size);
+            buff = new byte[BitConverter.ToUInt32(size, 0)];
+            socket.Receive(buff);
+            return Encoding.UTF8.GetString(buff);
+        }
+
 
         ~DataDownload()
         {
