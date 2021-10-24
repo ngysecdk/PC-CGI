@@ -1,11 +1,10 @@
 ﻿using System;
-
 namespace PC_CGI
 {
     //TODO Добавить возможность сохранения заказа
     class Order
     {
-        void Set(string TableName, string value)
+        public void Set(string TableName, string value)
         {
             switch (TableName)
             {
@@ -27,15 +26,15 @@ namespace PC_CGI
         public string Description = "";
         public string ColoringImageLinck = "";
         public string Model3DLink = "";
-        public string Kolk = "1";
-        public string SoundGet = "1";
-        public string Bridge = "1";
-        public string Anker = "1";
-        public string TypeBuild = "1";
-        public string TypeGrif = "1";
-        public string DecaMaterial = "1";
-        public string Strings = "1";
-        public string Colouring = "1";
-        public string Electric = "1";
+        public string Kolk = "";
+        public string SoundGet = "";
+        public string Bridge = "";
+        public string Anker = "";
+        public string TypeBuild = "";
+        public string TypeGrif = "";
+        public string DecaMaterial = "";
+        public string Strings = "";
+        public string Colouring = "";
+        public string Electric = "";
     }
 }

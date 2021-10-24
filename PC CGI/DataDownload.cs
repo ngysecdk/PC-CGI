@@ -10,7 +10,7 @@ namespace PC_CGI
 {
     class DataDownload
     {
-        List<DataTable> tables = new List<DataTable>();
+        public List<DataTable> tables = new List<DataTable>();
         Cryptor cryptor;
         Socket socket;
         static int port = 5555;                 /// порт сервера

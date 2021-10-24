@@ -24,7 +24,7 @@ namespace PC_CGI
         private void Border_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (Click != null) Click(this, null);
-            setVisibles(Visibility.Visible);
+            setVisibles(normal:Visibility.Visible);
         }
         void setVisibles(Visibility moved = Visibility.Hidden, Visibility pressed = Visibility.Hidden, Visibility normal = Visibility.Hidden)
         {

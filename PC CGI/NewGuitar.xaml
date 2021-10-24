@@ -16,7 +16,7 @@
         <lcl:TextButton x:Name="Strings" MovedState="Images/StringsMoved.png" NormalState="Images/StringsNormal.png" PressedState="Images/StringsPressed.png" Margin="626,106,0,0" TableName="Струны" Click="Table_Click"/>
         <lcl:TextButton x:Name="Bridge" NormalState="Images/BridgeNormal.png" MovedState="Images/BridgeMoved.png" PressedState="Images/BridgePressed.png" Height="275" Margin="175,435,0,0" Width="345" TableName="Бридж" Click="Table_Click"/>
         <lcl:TextButton x:Name="Kolk" MovedState="Images/KolkMoved.png" NormalState="Images/KolkNormal.png" PressedState="Images/KolkPressed.png" Margin="1053,88,0,0" TableName="Колки" Click="Table_Click"></lcl:TextButton>
-        <lcl:TextButton x:Name="SoundGetter" MovedState="Images/SoundGetterMoved.png" NormalState="Images/SoundGetterNormal.png" PressedState="Images/SoundGetterPressed.png" Margin="298,123,0,0" TableName="Звукосниматели" Click="Table_Click"/>
+        <lcl:TextButton x:Name="SoundGetter" MovedState="Images/SoundGetterMoved.png" NormalState="Images/SoundGetterNormal.png" PressedState="Images/SoundGetterPressed.png" Margin="298,123,0,0" TableName="Звукосниматель" Click="Table_Click"/>
         <lcl:TextButton x:Name="Grif" MovedState="Images/GrifMoved.png" NormalState="Images/GrifNormal.png" PressedState="Images/GrifPressed.png" Margin="485,315,0,0" TableName="Материал_грифа" Click="Table_Click"/>
     </Grid>
 </Window>
