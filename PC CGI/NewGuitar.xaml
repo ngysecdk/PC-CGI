@@ -18,5 +18,25 @@
         <lcl:TextButton x:Name="Kolk" MovedState="Images/KolkMoved.png" NormalState="Images/KolkNormal.png" PressedState="Images/KolkPressed.png" Margin="1053,88,0,0" TableName="Колки" Click="Table_Click"></lcl:TextButton>
         <lcl:TextButton x:Name="SoundGetter" MovedState="Images/SoundGetterMoved.png" NormalState="Images/SoundGetterNormal.png" PressedState="Images/SoundGetterPressed.png" Margin="298,123,0,0" TableName="Звукосниматель" Click="Table_Click"/>
         <lcl:TextButton x:Name="Grif" MovedState="Images/GrifMoved.png" NormalState="Images/GrifNormal.png" PressedState="Images/GrifPressed.png" Margin="485,315,0,0" TableName="Материал_грифа" Click="Table_Click"/>
+        <Button x:Name="Calc" Content="Рассчитать стоимость" HorizontalAlignment="Left" Height="50" Margin="925,530,0,0" VerticalAlignment="Top" Width="345" FontSize="30" BorderBrush="Black" Padding="1" BorderThickness="2" FontWeight="Bold" Click="Calc_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Background small.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Close" Content="Выйти" HorizontalAlignment="Left" Height="50" Margin="1070,585,0,0" VerticalAlignment="Top" Width="200" FontSize="30" BorderBrush="Black" Padding="1" BorderThickness="2" FontWeight="Bold" Click="Close_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Background small.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Coloring" Content="Выбрать покраску" HorizontalAlignment="Left" Height="50" Margin="925,475,0,0" VerticalAlignment="Top" Width="345" FontSize="30" BorderBrush="Black" Padding="1" BorderThickness="2" FontWeight="Bold" Click="Coloring_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Background small.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="TypeBuild" Content="Вид сборки" HorizontalAlignment="Left" Height="50" Margin="925,420,0,0" VerticalAlignment="Top" Width="345" FontSize="30" BorderBrush="Black" Padding="1" BorderThickness="2" FontWeight="Bold" Click="TypeBuild_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Background small.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

@@ -2,22 +2,22 @@
 namespace PC_CGI
 {
     //TODO Добавить возможность сохранения заказа
-    class Order
+    internal class Order
     {
         public void Set(string TableName, string value)
         {
             switch (TableName)
             {
-                case "Колки": break;
-                case "Бридж": break;
-                case "Звукосниматель": break;
-                case "Анкер": break;
-                case "Вид_сборки": break;
-                case "Материал_корпуса": break;
-                case "Струны": break;
-                case "Покраска": break;
-                case "Материал_грифа": break;
-                case "Электронная_начинка": break;
+                case "Колки": Kolk = value; break;
+                case "Бридж": Bridge = value; break;
+                case "Звукосниматель": SoundGet = value; break;
+                case "Анкер": Anker = value; break;
+                case "Вид_сборки": TypeBuild = value; break;
+                case "Материал_корпуса": DecaMaterial = value; break;
+                case "Струны": Strings = value; break;
+                case "Покраска": Colouring = value; break;
+                case "Материал_грифа": TypeGrif = value; break;
+                case "Электронная_начинка": Electric = value; break;
                 default: throw new Exception("Разработчик дурачок, ошибся");
             }
         }

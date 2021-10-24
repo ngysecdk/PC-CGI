@@ -5,10 +5,11 @@ using System.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace PC_CGI
 {
-    class DataDownload
+    internal class DataDownload
     {
         public List<DataTable> tables = new List<DataTable>();
         Cryptor cryptor;
@@ -47,14 +48,33 @@ namespace PC_CGI
             }
             tables.Add(dataTable);
         }
+
+        public int GetCost(string Table, string value)
+        {
+            if (value == "") return 0;
+            Send(Table + "|" + value);
+            int Cost;
+            int.TryParse(Receive(), out Cost);
+            return Cost;
+        }
+        public string FindRow(string TableName, string ID)
+        {
+            if (ID == "") return "";
+            var table = tables.Find(i => i.TableName == TableName);
+            DataRow row = table.AsEnumerable().SingleOrDefault(i => i.Field<string>("Код") == ID);
+            string res = TableName + " : ";
+            for (int i = 1; i < row.ItemArray.Length; i++) res += (string)row.ItemArray[i] + " ";
+            return res + " = ";
+        }
         byte[] size = new byte[4];
-        int Send(string text)
+        public int Send(string text)
         {
             byte[] buff = Encoding.UTF8.GetBytes(text);
-            socket.Send(BitConverter.GetBytes((uint)buff.Length));
+            byte[] SizeText = BitConverter.GetBytes((uint)buff.Length);
+            socket.Send(SizeText);
             return socket.Send(buff);
         }
-        string Receive()
+        public string Receive()
         {
             socket.Receive(size);
             byte[] buff = new byte[BitConverter.ToUInt32(size, 0)];

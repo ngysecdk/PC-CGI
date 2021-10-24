@@ -1,0 +1,30 @@
+﻿<Window x:Class="PC_CGI.Calc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC_CGI"
+        mc:Ignorable="d"
+        Title="Calc" Height="700" Width="800" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/TableBack.png"/>
+    </Window.Background>
+    <Grid>
+        <Button x:Name="Close" Content="Выйти" HorizontalAlignment="Left" Height="50" Margin="15,0,0,15" VerticalAlignment="Bottom" Width="200" FontSize="30" BorderBrush="Black" Padding="1" BorderThickness="2" FontWeight="Bold" Click="Close_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Background small.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="SendOrder" Content="Оформить заказ" HorizontalAlignment="Left" Height="50" Margin="240,0,0,15" VerticalAlignment="Bottom" Width="280" FontSize="30" BorderBrush="Black" Padding="1" BorderThickness="2" FontWeight="Bold" Click="SendOrder_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Background small.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="CheckTB" Background="#99818181" Height="200" Margin="15,0,15,85" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="16" BorderBrush="Black" SelectionBrush="#660078D7" IsReadOnly="True" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" AutoWordSelection="True"/>
+        <TextBox x:Name="FIO" Background="#99818181" Height="50" Margin="15,10,15,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" BorderBrush="Black" SelectionBrush="#660078D7" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" AutoWordSelection="True" MaxLines="1" MaxLength="65000" Text="ФИО" PreviewMouseLeftButtonDown="FIO_MouseLeftButtonDown"/>
+        <TextBox x:Name="Phone" Background="#99818181" Height="50" Margin="15,75,15,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" BorderBrush="Black" SelectionBrush="#660078D7" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" AutoWordSelection="True" MaxLines="1" MaxLength="65000" Text="Телефон" PreviewMouseLeftButtonDown="Phone_PreviewMouseLeftButtonDown"/>
+        <TextBox x:Name="ColorLink" Background="#99818181" Height="50" Margin="15,140,15,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" BorderBrush="Black" SelectionBrush="#660078D7" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" AutoWordSelection="True" MaxLines="1" MaxLength="65000" Text="Ссылка на пример окраски(если нужно)" PreviewMouseLeftButtonDown="ColorLink_PreviewMouseLeftButtonDown"/>
+        <TextBox x:Name="Model3dLink" Background="#99818181" Height="50" Margin="15,205,15,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" BorderBrush="Black" SelectionBrush="#660078D7" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" AutoWordSelection="True" MaxLines="1" MaxLength="65000" Text="Ссылка на 3D - модель желаемой гитары(не обязательно)" PreviewMouseLeftButtonDown="Model3dLink_PreviewMouseLeftButtonDown"/>
+        <TextBox x:Name="Descriptions" Background="#99818181" Margin="15,270,15,300" TextWrapping="Wrap" FontSize="24" BorderBrush="Black" SelectionBrush="#660078D7" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" AutoWordSelection="True" MaxLines="100" MaxLength="16777215" Text="Дополнительные пожелания" PreviewMouseLeftButtonDown="Model3dLink_Copy_PreviewMouseLeftButtonDown"/>
+    </Grid>
+</Window>
