@@ -16,12 +16,13 @@ namespace PC_CGI
         static int port = 5555;                 /// порт сервера
         static string address = "192.168.0.2";  /// адрес сервера
         public DataDownload()
-        { 
+        {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            retry:
+        retry:
             try { socket.Connect(IPAddress.Parse(address), port); }
-            catch (Exception e) { 
-                if (MessageBox.Show(e.Message +  "\nПовторить попытку? (Не думаю. что это поможет)", 
+            catch (Exception e)
+            {
+                if (MessageBox.Show(e.Message + "\nПовторить попытку?",
                     "Ошибка при подключении к серверу", MessageBoxButton.YesNo, MessageBoxImage.Question,
                     MessageBoxResult.Yes) == MessageBoxResult.No) Environment.Exit(-1);
                 else goto retry;
@@ -47,7 +48,6 @@ namespace PC_CGI
             }
             tables.Add(dataTable);
         }
-
         public int GetCost(string Table, string value)
         {
             if (value == "") return 0;

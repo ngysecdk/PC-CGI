@@ -13,8 +13,8 @@ namespace PC_CGI
             var splash = new SplashScreen("Images/SplashScreen.png");
             splash.Show(false);
             dataDownload = new DataDownload();
-            splash.Close(TimeSpan.FromSeconds(2));
-            Thread.Sleep(2000);
+            splash.Close(TimeSpan.FromSeconds(1));
+            Thread.Sleep(1000);
             InitializeComponent();
         }
         private void Table_Click(object sender, EventArgs e)
