@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 namespace PC_CGI
 {
     public partial class Calc : Window
@@ -55,19 +45,9 @@ namespace PC_CGI
             DD.Send("5");
             DD.Send(Descriptions.Text);
             DD.Send("6");
-            DD.Send(Ord.Kolk + "|" +
-                Ord.SoundGet + "|" +
-                Ord.Bridge + "|" +
-                Ord.Anker + "|" +
-                Ord.TypeBuild + "|" +
-                Ord.TypeGrif + "|" +
-                Ord.DecaMaterial + "|" +
-                Ord.Strings + "|" +
-                Ord.Colouring + "|" +
-                Ord.Electric);
+            DD.Send($"{Ord.Kolk}|{Ord.SoundGet}|{Ord.Bridge}|{Ord.Anker}|{Ord.TypeBuild}|{Ord.TypeGrif}|{Ord.DecaMaterial}|{Ord.Strings}|{Ord.Colouring}|{Ord.Electric}");
             DD.Send("ENDCLIENTINFO");
-            //TODO Добавить окно информаирования
-            MessageBox.Show("Ваш заказ успешно зарегистрирован под номером : " + DD.Receive() + ". С вами скоро свяжется наш оператор для уточнения заказа. Информацию об оплате вам сообщат дополнительно.");
+            new OderSuccessMsd(DD.Receive()).ShowDialog();
             Close();
         }
         private void FIO_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) { if (FIO.Text == "ФИО") FIO.Text = ""; }

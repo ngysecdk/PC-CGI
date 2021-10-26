@@ -2,7 +2,6 @@
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-
 namespace PC_CGI
 {
     public partial class NewGuitar : Window
@@ -30,13 +29,11 @@ namespace PC_CGI
             new Calc(order, dataDownload).ShowDialog();
             Close();
         }
-
         private void TypeBuild_Click(object sender, RoutedEventArgs e)
         {
             order.Set("Вид_сборки", new ChooseComponent().GetId(dataDownload.tables.Find(i => i.TableName == "Вид_сборки")));
             ((Button)sender).Opacity = 0.5;
         }
-
         private void Coloring_Click(object sender, RoutedEventArgs e)
         {
             order.Set("Покраска", new ChooseComponent().GetId(dataDownload.tables.Find(i => i.TableName == "Покраска")));

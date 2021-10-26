@@ -3,12 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-
 namespace PC_CGI
 {
-    /// <summary>
-    /// Логика взаимодействия для TextButton.xaml
-    /// </summary>
     public partial class TextButton : UserControl
     {
         string tableName = "";
