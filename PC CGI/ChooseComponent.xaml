@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="TableDG" Background="#99818181" Margin="4" FontSize="36" IsReadOnly="True" SelectionMode="Single" RowBackground="#00000000" HeadersVisibility="Column"/>
+        <DataGrid x:Name="TableDG" ColumnWidth="*" Background="#99818181" Margin="4" FontSize="36" IsReadOnly="True" SelectionMode="Single" RowBackground="#00000000" HeadersVisibility="Column"/>
         <Button x:Name="Choose" Content="Выбрать" HorizontalAlignment="Left" Margin="20,11,0,15" Grid.Row="1" Width="215" FontSize="30" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Click="Choose_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Background small.png"/>
