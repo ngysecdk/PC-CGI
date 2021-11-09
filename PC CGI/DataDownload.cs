@@ -14,7 +14,7 @@ namespace PC_CGI
         Cryptor cryptor;
         Socket socket;
         static int port = 5555;                 /// порт сервера
-        static string address = "192.168.0.2";  /// адрес сервера
+        static string address = "127.0.0.1";  /// адрес сервера
         public DataDownload()
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
